@@ -3,14 +3,14 @@ Game: Potion maker - Shopkeeper type beat
  - Backstory: You made a deal with the feared Dark Mage <XYZ> and now they want their payment. 
               Using your alchemical knowledge you opened a potion shop to make the money that you owe this guy.
  - Customers: Assassins, Monsters (Werewolves, vampires etc.), Dark Mages (fe. Necromancers), Bandits etc.
- - Miniboss(es): Tax Inspector
+ - Miniboss(es): Tax Inspector, 
  - "Day" (Night) based gameplay
     - Every night make different potions for customers (fe.: Poison, immolation, explosive etc.)
     - Every night, an increasing amount of money ("rent") is needed to continue
  - Endgame: Survive <X> Days and beat the Dark Mage (Finite Days with an end goal) OR 
             Survive as long as you can (High Score system)
- - Mechanics: Reagent Collection (Plants, Rocks, Metals etc.)
-              Potion Making and selling from the reagents
-              Using your alchemical knowledge to transmute your reagents or even create rare reagents (fe. gold - Beware the Tax Inspector!)
-              Broaden your alchemical knowledge!
+ - Mechanics: Reagent Collection (Plants, Rocks, Metals etc.),
+              Making the reagents into potions and selling them,
+              Using your alchemical knowledge to transmute your reagents or even create rare reagents (f.e. gold - Beware the Tax Inspector!)
+              Broaden your alchemical knowledge! (could be score multiplier)
               Increase your reputation to broaden your customer base and make more profit!
