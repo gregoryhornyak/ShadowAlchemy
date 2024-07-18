@@ -15,5 +15,6 @@ desk.onload = function() {
 
 function game_loop() {
     // clear canvas
-    // update player 
+    // update player
+    // update assets
 }
