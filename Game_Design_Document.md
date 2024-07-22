@@ -54,4 +54,5 @@ Controls
 ## Development Timeline
 
 17th: basic ideas, no hands on development
-18th: finalising MPV, game engine search
+18th: finalising MPV plans, game engine search
+19th: working on MPV
