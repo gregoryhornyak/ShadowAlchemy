@@ -15,16 +15,18 @@ Game: Potion maker - Shopkeeper type beat
               Broaden your alchemical knowledge! (could be score multiplier)
               Increase your reputation to broaden your customer base and make more profit!
 
-MPV: 
+MVP:
 1-2 types of customers: Assassin, Vampires
+- Haytham K. - Assassin: looking for invisibility potion, pickpocket ability boost
+- Vladislav - Vampire: looking for blood-orange
 2-3 types of potions: health regen, invisibility potion, pickpocket ability boost
-2-4 types of flowers: snowberry, hanging moss, levander 
+2-4 types of flowers: snowberry, hanging moss, levander, blood-orange
 day and night cycles:
   day: planting: you can plant snowberry, hanging moss, levander 
   night: selling + potion making
 potion making mechanism:
 - brew
 - mixing
-MPV has no ending - no boss fight
+MVP has no ending - no boss fight
 
 QUESTIONS:
