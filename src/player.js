@@ -28,7 +28,21 @@ export default class Player {
             this.position.x = this.gameWidth - this.width;
         }
     }
+    move_from_current_tile_to(direction) {
+        if (direction == "left") {
+            
+        }
+    }
     move_left() {
-        
+        target_tile = this.move_from_current_tile_to("left");
+    }
+    move_right() {
+        target_tile = this.move_from_current_tile_to("right");
+    }
+    move_up() {
+        target_tile = this.move_from_current_tile_to("up");
+    }
+    move_down() {
+        target_tile = this.move_from_current_tile_to("down");
     }
 }
