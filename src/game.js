@@ -26,9 +26,9 @@ export default class Game {
     }
     draw(ctx) {
         this.shop.draw(ctx);
-        //this.player.draw(ctx);
+        this.player.draw(ctx);
     }
     update() {
-        console.log("Updated.")
+        this.player.update()
     }
 }
