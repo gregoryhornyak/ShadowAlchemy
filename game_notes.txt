@@ -37,3 +37,6 @@ MVP has no ending - no boss fight
 QUESTIONS:
 
 Point and click or keyboard?
+
+PROBLEM:
+grid system using two different systems: coordinates and tile numbers
