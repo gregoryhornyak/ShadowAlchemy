@@ -4,7 +4,7 @@ export default class ShopLayout {
         this.layout = [
             "W","W","W","W","W","W","W","W","W","W",
             "W","W","W","S","S","A","G","A","A","W",
-            "W","S","A","A","A","A","W","A","S","W",
+            "W","S","A","A","A","A","W","A","S","W", 
             "W","D","D","D","D","D","W","A","S","W",
             "W","A","A","A","A","A","W","A","S","W",
             "W","A","A","A","A","A","W","W","W","W"
