@@ -15,7 +15,11 @@ export default class Player {
         };
     }
     draw(ctx) {
-        ctx.drawImage(this.texture,this.position.x,this.position.x,300*this.size,300*this.size);  
+        //ctx.drawImage(this.texture,this.position.x,this.position.x,300*this.size,300*this.size);  
+        ctx.fillStyle = "red";
+        ctx.beginPath();
+        ctx.arc(this.position.x, this.position.y, 50, 0, 2 * Math.PI);
+        ctx.fill();
     }
     update(deltaTime) {
         this.position.x += this.speed;
@@ -24,7 +28,7 @@ export default class Player {
             this.position.x = this.gameWidth - this.width;
         }
     }
-    mouseover_reaction() {
-        this.size = 2
+    move_left() {
+        
     }
 }
