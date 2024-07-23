@@ -5,8 +5,8 @@ export default class Shop {
         this.square_size = 100;
     }
     draw(ctx) {
-        ctx.fillStyle = "#6e4c31";
-        ctx.fillRect(0, 0, 1000, 1000*0.6);
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, 1000, 700);
         // draw tiles
         let square_size = this.square_size;
         for (let i = 0; i < this.grid_width; i++) {
