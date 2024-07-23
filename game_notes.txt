@@ -1,0 +1,42 @@
+Theme: Shadows and Alchemy
+Game: Potion maker - Shopkeeper type beat
+ - Backstory: You made a deal with the feared Dark Mage <XYZ> and now they want their payment.
+              Using your alchemical knowledge you opened a potion shop to make the money that you owe this guy.
+ - Customers: Assassins, Monsters (Werewolves, vampires etc.), Dark Mages (fe. Necromancers), Bandits etc.
+ - Miniboss(es): Tax Inspector, 
+ - "Day" (Night) based gameplay
+    - Every night make different potions for customers (fe.: Poison, immolation, explosive etc.)
+    - Every night, an increasing amount of money ("rent") is needed to continue
+ - Endgame: Survive <X> Days and beat the Dark Mage (Finite Days with an end goal) OR 
+            Survive as long as you can (High Score system)
+ - Mechanics: Reagent Collection (Plants, Rocks, Metals etc.),
+              Making the reagents into potions and selling them,
+              Using your alchemical knowledge to transmute your reagents or even create rare reagents (f.e. gold - Beware the Tax Inspector!)
+              Broaden your alchemical knowledge! (could be score multiplier)
+              Increase your reputation to broaden your customer base and make more profit!
+Music: copy beat of popular songs - by hand 
+https://jummb.us/#j6N07Unnamedn420s0k0l00e03t1Ua7g0fj07r1O_U000000000000i0o3321T1v0pu92f030o21962pc00q0B010w0000Oald160A8F4B3Qd107P5a93R0000E2c0b9639T1v0puc1f163q050Oa0d230A1F0B4Q0050Pd66cR0000E2c062972T1v0pub6f182q050Oa1d230A5F4BbQ0001Peec8R0000E3c062363479T5v0puc9f151q050Oa1d230HXQRRJJHJAAArq8h0E0c0T3v0Au03f0000qwB17210Oald080SLXtHrrsksrzrrrrE1c0b6T3v0pu03f0000qwB16110Oa7d080SW86bmhkrrzrkrrrE1c0b6b4h400000000h4g000000014h000000004h400000000h4g000000014h00000000p1E000009uChx0OW1BQ3bE4o2qWp64a1uCny1vAa1u0
+https://jummb.us/#j6N07Unnamedn420s0k0l00e04t1Ua7g0fj07r1O_U000000000000i0o3321T1v0xu01f0000qwB16110Oagd030A1F0B7Q005dPd444R0000E5c0b661862763677T5v0wua1f062ge2ec2f02j01960me00q8740Oa7ld380HT-Iqijriiiih99h0E0c0T1v0pu44f0000qwB16110Oa0d030A1F0B7Q005dPd444R0000E5c0b661862763677T5v0Cu05f154q8540Oacd230HYr901i8ah00000h0E0c0T3v0Au03f0000qwB17210Oald080SLXtHrrsksrzrrrrE1c0b6T3v0pu03f0000qwB16110Oa7d080SW86bmhkrrzrkrrrE1c0b6b000000000001cA000000004x000000000h4g0000000y4x000000008y80000000p22UBWNGUKHGWa4g3nkRtzM4g35FQCoE2nFDB-mFB-wM6CuzWbh1j8YEop7H85Wp7xU2gw92OnMpBO-T0lX5eDjFAtS0Ekq04LjbYAChV6xAi-wnQ04Lj8Mwpt0OW1BQ2enR3bop6aNj54z5j8N4OZB7p2wjnj8MxgbQOYgbYxgb-g5-gE5-gbYxgbM0
+keyboard?
+
+MVP:
+- perspective could be top down to make things easier,
+1-2 types of customers: Assassin, Vampires
+- Haytham K. - Assassin: looking for invisibility potion, pickpocket ability boost
+- Vladislav - Vampire: looking for blood-orange
+2-3 types of potions: health regen, invisibility potion, pickpocket ability boost
+2-4 types of flowers: snowberry, hanging moss, levander, blood-orange
+day and night cycles:
+  day: planting: you can plant snowberry, hanging moss, levander
+  night: selling + potion making
+potion making mechanism:
+- brew
+- mixing
+MVP has no ending - no boss fight
+
+QUESTIONS:
+
+keyboard?
+
+PROBLEM:
+grid system using two different systems: coordinates and tile numbers
