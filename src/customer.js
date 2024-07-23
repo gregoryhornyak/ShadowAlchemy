@@ -1,5 +1,5 @@
 export default class Customer {
-    constructor(game,name,customer_class,need) {
+    constructor(game,name,customer_class,need,texture) {
         this.name = name;
         this.customer_class = customer_class;
         this.need = need;
@@ -8,7 +8,7 @@ export default class Customer {
 
         this.size = 10;
         this.texture = new Image();
-        this.texture.src = "https://www.svgrepo.com/show/49407/scientist.svg";
+        this.texture.src = texture;
         //check if size is smaller than game size
         //this.texture.height
         //this.texture.width
