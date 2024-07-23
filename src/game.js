@@ -1,6 +1,8 @@
 // import all sub files
+//import constants from "./constants.js";
 import Player from "./player.js";
 import Shop from "./shop.js";
+import ShopLayout from "./shop_layout.js";
 //import Customer from "/src/customer";
 import InputHandler from "./input_handle.js";
 
@@ -19,9 +21,11 @@ const GAMESTATES = {
 export default class Game {
     constructor(CANVAS_WIDTH, CANVAS_HEIGHT) {
         this.gameWidth = CANVAS_WIDTH;
-        this.gameHeight = CANVAS_HEIGHT;    
-        this.player = new Player(this,"Lajos");
+        this.gameHeight = CANVAS_HEIGHT;
         this.shop = new Shop(this);
+        this.shop_layout = new ShopLayout();
+        this.player = new Player(this,"Lajos");
+        
         new InputHandler(this.player, this);
     }
     draw(ctx) {
