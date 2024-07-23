@@ -1,8 +1,8 @@
 // import all sub files
-import Player from "/src/player";
-import Shop from "/src/shop";
-import Customer from "/src/customer";
-import InputHandler from "src/input_handle";
+import Player from "./player.js";
+import Shop from "./shop.js";
+//import Customer from "/src/customer";
+import InputHandler from "./input_handle.js";
 
 const GAMESTATES = {
     PAUSED: 0,
@@ -11,7 +11,7 @@ const GAMESTATES = {
     GAMEOVER: 3
 };
 
-//wall = "https://www.svgrepo.com/show/178610/brick-wall-wall.svg";
+//floor = "https://www.svgrepo.com/show/268102/draws-floor.svg";
 //dracula: https://www.svgrepo.com/show/185586/dracula.svg
 //assassin: https://www.svgrepo.com/show/299931/ninja.svg
 //desk = "https://www.svgrepo.com/show/230630/desk.svg";
@@ -21,10 +21,12 @@ export default class Game {
         this.gameWidth = CANVAS_WIDTH;
         this.gameHeight = CANVAS_HEIGHT;    
         this.player = new Player(this,"Lajos");
-        new InputHandler(this.player);
+        this.shop = new Shop(this);
+        new InputHandler(this.player, this);
     }
     draw(ctx) {
-        this.player.draw(ctx);
+        this.shop.draw(ctx);
+        //this.player.draw(ctx);
     }
     update() {
         console.log("Updated.")
