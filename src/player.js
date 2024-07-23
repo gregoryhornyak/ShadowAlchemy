@@ -54,6 +54,7 @@ export default class Player {
     // snap to grid
     snap_to_grid(current_position) {
         let remainder = current_position % this.unit;
+        console.log(current_position + ", " + remainder);
         if (remainder < this.unit/2) {
             return current_position - remainder;
         }
