@@ -18,7 +18,7 @@ export default class Player {
         //ctx.drawImage(this.texture,this.position.x,this.position.x,300*this.size,300*this.size);  
         ctx.fillStyle = "red";
         ctx.beginPath();
-        ctx.arc(this.position.x, this.position.y, 50, 0, 2 * Math.PI);
+        ctx.arc(this.position.x+50, this.position.y+50, 50, 0, 2 * Math.PI);
         ctx.fill();
     }
     update(deltaTime) {
