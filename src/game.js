@@ -5,6 +5,7 @@ import Shop from "./shop.js";
 import ShopLayout from "./shop_layout.js";
 //import Customer from "/src/customer";
 import InputHandler from "./input_handle.js";
+import Potion from "./potions.js";
 
 const GAMESTATES = {
     PAUSED: 0,
@@ -25,12 +26,15 @@ export default class Game {
         this.shop = new Shop(this);
         this.shop_layout = new ShopLayout();
         this.player = new Player(this,"Lajos");
-        
+        this.health_potion = new Potion(this,"Health-Regen","red","https://www.svgrepo.com/show/271526/potion.svg");
         new InputHandler(this.player, this);
+        //var audio = new Audio("../assets/music/the-beat-of-nature.mp3");
+        //audio.play();
     }
     draw(ctx) {
         this.shop.draw(ctx);
         this.player.draw(ctx);
+        this.health_potion.draw(ctx);
     }
     update() {
         this.player.update()
