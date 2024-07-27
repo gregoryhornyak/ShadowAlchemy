@@ -1,91 +1,97 @@
 export default class TileRender {
-    constructor(x,y,tile_size) {}
+    constructor() {}
 
-    fence_left(ctx) {
+    fence_left(ctx,x,y,tile_size) {
         ctx.fillStyle = "#4c2512"
         ctx.fillRect(x,y, tile_size, tile_size)
         ctx.fillStyle = "#52a523"
         ctx.fillRect(x+10,y, tile_size-10, tile_size)
     }
-    fence_right(ctx) {
+    fence_right(ctx,x,y,tile_size) {
         ctx.fillStyle = "#4c2512"
         ctx.fillRect(x,y, tile_size, tile_size)
         ctx.fillStyle = "#52a523"
         ctx.fillRect(x+10,y, tile_size-10, tile_size)
         }
-    wall(ctx) {
+    wall(ctx,x,y,tile_size) {
         ctx.fillStyle = "#7f7d9c"
         ctx.fillRect(x,y, tile_size, tile_size)
     }
-    ground(ctx) {
+    ground(ctx,x,y,tile_size) {
         ctx.fillStyle = "#462d1b"
         ctx.fillRect(x,y, tile_size, tile_size)
     }
-    draw(ctx)
+    path(ctx,x,y,tile_size) {
+        ctx.fillStyle = "#e4ccbb"
+        ctx.fillRect(x,y, tile_size, tile_size)
+    }
+    door(ctx,x,y,tile_size) {
+        ctx.fillStyle = "#fbf8f6"
+        ctx.fillRect(x,y, tile_size, tile_size)
+    }
+    table(ctx,x,y,tile_size) {
+        ctx.fillStyle = "#964B00"
+        ctx.fillRect(x,y, tile_size, tile_size)
+    }
+    floor(ctx,x,y,tile_size) {
+        ctx.fillStyle = "#fbf8f6"
+        ctx.fillRect(x,y, tile_size, tile_size)
+    }
+    /**
+     * canvas, layout 
+     */
+    draw(ctx,layout)
     {
         ctx.fillStyle = "#ffffff";
         ctx.fillRect(0, 0, 1000, 700);
 
         //Gets constans from layout and draws tiles
-        for (let column = 0; column < this.garden_layout.columns; column++)
+        for (let column = 0; column < layout.columns; column++)
         {
-            for (let row = 0; row < this.garden_layout.rows; row++) 
+            for (let row = 0; row < layout.rows; row++) 
             {
-                const tile = this.garden_layout.get_tile(column, row);
-                const x = column * this.garden_layout.square_size;
-                const y = row * this.garden_layout.square_size;
-                const tile_size = this.garden_layout.square_size;
+                const tile = layout.get_tile(column, row);
+                const x = column * layout.square_size;
+                const y = row * layout.square_size;
+                const tile_size = layout.square_size;
 
                 //draw_tile(tile, tile_size, x, y);
                 switch (tile)
                 {  
                     case "Fl": 
-                        ctx.fillStyle = "#4c2512"
-                        ctx.fillRect(x,y, tile_size, tile_size)
-                        ctx.fillStyle = "#52a523"
-                        ctx.fillRect(x+10,y, tile_size-10, tile_size)
+                        this.fence_left(ctx,x,y,tile_size);
                         break;
                     case "Ftl": 
-                        ctx.fillStyle = "#4c2512"
-                        ctx.fillRect(x,y, tile_size, tile_size)
-                        ctx.fillStyle = "#52a523"
-                        ctx.fillRect(x+10,y+10, tile_size-10, tile_size-10)
+                        this.fence_left(ctx,x,y,tile_size);
                         break;
                     case "Ft": 
-                        ctx.fillStyle = "#4c2512"
-                        ctx.fillRect(x,y, tile_size, tile_size)
-                        ctx.fillStyle = "#52a523"
-                        ctx.fillRect(x,y+10, tile_size, tile_size-10)
+                        this.fence_top(ctx,x,y,tile_size);
                         break;
                     case "Ftr":
-                        ctx.fillStyle = "#4c2512"
-                        ctx.fillRect(x,y, tile_size, tile_size)
-                        ctx.fillStyle = "#52a523"
-                        ctx.fillRect(x,y+10, tile_size-10, tile_size-10)
+                        this.fence_right(ctx,x,y,tile_size);
                         break;
                     case "Fr": 
-                        ctx.fillStyle = "#4c2512"
-                        ctx.fillRect(x,y, tile_size, tile_size)
-                        ctx.fillStyle = "#52a523"
-                        ctx.fillRect(x,y, tile_size-10, tile_size)
+                        this.fence_right(ctx,x,y,tile_size);
                         break;
                     case "G": 
-                        ctx.fillStyle = "#462d1b"
-                        ctx.fillRect(x,y, tile_size, tile_size)
+                        this.ground(ctx,x,y,tile_size);
                         break;
                     case "W": 
-                        ctx.fillStyle = "#7f7d9c"
-                        ctx.fillRect(x,y, tile_size, tile_size)
+                        this.wall(ctx,x,y,tile_size);
                         break;
                     case "P": 
-                        ctx.fillStyle = "#e4ccbb"
-                        ctx.fillRect(x,y, tile_size, tile_size)
+                        this.path(ctx,x,y,tile_size);
                         break;
                     case "D": 
-                        ctx.fillStyle = "#fbf8f6"
-                        ctx.fillRect(x,y, tile_size, tile_size)
+                        this.door(ctx,x,y,tile_size);
                         break;
-                    default: //Missing texture / error
+                    case "F": 
+                        this.floor(ctx,x,y,tile_size);
+                        break;
+                    case "T": 
+                        this.table(ctx,x,y,tile_size);
+                        break;
+                    default: //Missing texture or error
                         ctx.fillStyle = "#000000"
                         ctx.fillRect(x,y, tile_size, tile_size)
                         break;
