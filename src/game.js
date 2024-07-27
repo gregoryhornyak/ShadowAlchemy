@@ -2,7 +2,9 @@
 //import constants from "./constants.js";
 import Player from "./player.js";
 import Shop from "./shop.js";
+import Garden from "./garden.js";
 import ShopLayout from "./shop_layout.js";
+import GardenLayout from "./garden_layout.js"
 //import Customer from "/src/customer";
 import InputHandler from "./input_handle.js";
 
@@ -24,12 +26,15 @@ export default class Game {
         this.gameHeight = CANVAS_HEIGHT;
         this.shop = new Shop(this);
         this.shop_layout = new ShopLayout();
+        this.garden = new Garden(this);
+        this.garden_layout = new GardenLayout();
         this.player = new Player(this,"Lajos");
         
         new InputHandler(this.player, this);
     }
     draw(ctx) {
-        this.shop.draw(ctx);
+        //this.shop.draw(ctx);
+        this.garden.draw(ctx);
         this.player.draw(ctx);
     }
     update() {
