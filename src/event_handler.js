@@ -31,7 +31,7 @@ export default class EventHandler {
     check_selection() {
         if (this.game.player.position.x == 100 && this.game.player.position.y == 200) {
             if (this.game.sceneHandler.current_scene == "shop") {
-                console.log("enable selection")
+                //console.log("enable selection")
                 this.game.selection.enable();
             }
         }
@@ -55,10 +55,19 @@ export default class EventHandler {
             // - player inventory changes, plus its texture maybe to show item in hand
         }
     }
+    check_player_collision() {
+        if (this.game.player.will_collide == true) {
+            console.log("Player will collide")
+            this.game.player.target_tile.x = this.game.player.source_tile.x;
+            this.game.player.target_tile.y = this.game.player.source_tile.y;
+            this.game.player.will_collide = false;
+        }
+    }
     update() {
         this.check_enter_garden();
         this.check_enter_shop();
         this.check_selection();
         this.check_player_interaction();
+        this.check_player_collision();
     }
 }
