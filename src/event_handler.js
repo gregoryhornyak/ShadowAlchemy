@@ -31,7 +31,17 @@ export default class EventHandler {
     check_selection() {
         if (this.game.player.position.x == 100 && this.game.player.position.y == 200) {
             if (this.game.sceneHandler.current_scene == "shop") {
-                //console.log("enable selection")
+                console.log("enable selection")
+                this.game.selection.position.x = 100;
+                this.game.selection.position.y = 100;
+                this.game.selection.enable();
+            }
+        }
+        else if (this.game.player.position.x == 200 && this.game.player.position.y == 200) {
+            if (this.game.sceneHandler.current_scene == "shop") {
+                console.log("enable selection")
+                this.game.selection.position.x = 200;
+                this.game.selection.position.y = 100;
                 this.game.selection.enable();
             }
         }
@@ -43,6 +53,7 @@ export default class EventHandler {
     }
     check_player_interaction() {
         if (this.game.player.init_interact == true) {
+            // if any object is within selection, then:
             if (this.game.potion.is_obtained == false) {
                 console.log("Player grabbed potion.")
                 this.game.potion.is_obtained = true;
