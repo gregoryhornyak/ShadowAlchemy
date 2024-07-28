@@ -20,6 +20,7 @@ export default class Player {
         };
         this.speed = 10;
         this.unit = 100;
+        this.key_locked = false;
     }
     draw(ctx) {
         //ctx.drawImage(this.texture,this.position.x,this.position.x,300*this.size,300*this.size);  
@@ -29,8 +30,10 @@ export default class Player {
         ctx.fill();
     }
     update() {
+        console.log(`key: ${this.key_locked}, pos-x: ${this.position.x}, pos-y: ${this.position.y}`)
         if (this.target_tile.x != this.position.x || this.target_tile.y != this.position.y){
             // work out universal math here
+            // for x - horizontal movement
             if (this.target_tile.x < this.position.x) {
                 this.position.x -= this.speed;
             }
@@ -40,6 +43,7 @@ export default class Player {
             if (Math.abs(this.position.x - this.target_tile.x) < this.speed) {
                 this.position.x = this.target_tile.x;
             }
+            // for y - vertical movement
             if (this.target_tile.y < this.position.y) {
                 this.position.y -= this.speed;
             }
@@ -50,11 +54,14 @@ export default class Player {
                 this.position.y = this.target_tile.y;
             }
         }
+        else {
+            this.key_locked = false;
+        }
     }
     // snap to grid
     snap_to_grid(current_position) {
         let remainder = current_position % this.unit;
-        console.log(current_position + ", " + remainder);
+        //console.log(current_position + ", " + remainder);
         if (remainder < this.unit/2) {
             return current_position - remainder;
         }
@@ -63,19 +70,27 @@ export default class Player {
         }
     }
     move_left() {
+        if (this.key_locked == true) {return 0}
         this.target_tile.x = this.position.x - this.unit;
         this.target_tile.x = this.snap_to_grid(this.target_tile.x);
+        this.key_locked = true;
     }
     move_right() {
+        if (this.key_locked == true) {return 0}
         this.target_tile.x = this.position.x + this.unit;
         this.target_tile.x = this.snap_to_grid(this.target_tile.x);
+        this.key_locked = true;
     }
     move_up() {
+        if (this.key_locked == true) {return 0}
         this.target_tile.y = this.position.y + this.unit;
         this.target_tile.y = this.snap_to_grid(this.target_tile.y);
+        this.key_locked = true;
     }
     move_down() {
+        if (this.key_locked == true) {return 0}
         this.target_tile.y = this.position.y - this.unit;
         this.target_tile.y = this.snap_to_grid(this.target_tile.y);
+        this.key_locked = true;
     }
 }

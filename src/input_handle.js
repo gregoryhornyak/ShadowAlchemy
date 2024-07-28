@@ -4,14 +4,16 @@ function getPos(e){
     var cursor = "";
     var over_player = false;
     cursor="Your Mouse Position Is : " + x + " and " + y ;
-    console.log(cursor)
+    //console.log(cursor)
     return over_player;
 }
 export default class InputHandler {
     constructor(player, game) {
+        this.is_key_pressed_down;
         document.addEventListener("mousemove", (event) => {
             getPos(event)
         });
+        //onkeydown = (event) => {
         document.addEventListener("keydown", event => {
             if (event.key == "ArrowLeft") {
                 player.move_left()
@@ -29,6 +31,9 @@ export default class InputHandler {
                 console.log("repeated")
             }
             //console.log(event.key)
+        });
+        document.addEventListener("keyup", event => {
+            
         });
     }
 }
