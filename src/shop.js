@@ -9,10 +9,6 @@ export default class Shop {
     }
     draw(ctx) {
         let layout = new ShopLayout();
-<<<<<<< HEAD
         this.game.tileRender.draw(ctx, layout);
-=======
-        this.game.tileRender.draw(ctx,layout);
->>>>>>> c2613dbbbff16faa3c1a879544a1e37a91a10f0d
     }
 }
