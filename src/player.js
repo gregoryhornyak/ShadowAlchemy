@@ -31,6 +31,7 @@ export default class Player {
         this.unit = 100;
         this.key_locked = false;
         this.init_interact = false;
+        this.will_collide = false;
     }
     draw(ctx) {
         ctx.drawImage(this.texture,this.position.x,this.position.y,this.size,this.size);  
@@ -79,26 +80,34 @@ export default class Player {
             return current_position + remainder;
         }
     }
+    store_source_tile() {
+        this.source_tile.x = this.position.x;
+        this.source_tile.y = this.position.y;
+    }
     move_left() {
         if (this.key_locked == true) {return 0}
+        this.store_source_tile();
         this.target_tile.x = this.position.x - this.unit;
         this.target_tile.x = this.snap_to_grid(this.target_tile.x);
         this.key_locked = true;
     }
     move_right() {
         if (this.key_locked == true) {return 0}
+        this.store_source_tile();
         this.target_tile.x = this.position.x + this.unit;
         this.target_tile.x = this.snap_to_grid(this.target_tile.x);
         this.key_locked = true;
     }
     move_up() {
         if (this.key_locked == true) {return 0}
+        this.store_source_tile();
         this.target_tile.y = this.position.y + this.unit;
         this.target_tile.y = this.snap_to_grid(this.target_tile.y);
         this.key_locked = true;
     }
     move_down() {
         if (this.key_locked == true) {return 0}
+        this.store_source_tile();
         this.target_tile.y = this.position.y - this.unit;
         this.target_tile.y = this.snap_to_grid(this.target_tile.y);
         this.key_locked = true;
