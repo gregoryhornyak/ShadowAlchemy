@@ -3,6 +3,7 @@
 import Player from "./player.js";
 import Shop from "./shop.js";
 import Garden from "./garden.js";
+import Selection from "./selection.js";
 import TileRenderer from "./tile_renderer.js";
 import InputHandler from "./input_handler.js";
 import SceneHandler from "./scene_handler.js";
@@ -27,20 +28,18 @@ export default class Game {
         this.sceneHandler = new SceneHandler(this,"shop");
         this.tileRenderer = new TileRenderer();
         this.shop = new Shop(this);
-        
         this.garden = new Garden(this);
-        
         this.player = new Player(this, "Lajos");
+        this.selection = new Selection(this);
         this.eventHandler = new EventHandler(this);
         new InputHandler(this.player, this);
         //var audio = new Audio("../assets/music/the-beat-of-nature.mp3");
         //audio.play();
     }
     draw(ctx) {
-        // this.shop.draw(ctx);
-        //this.garden.draw(ctx);
         this.sceneHandler.render_scene(ctx);
         this.player.draw(ctx);
+        this.selection.draw(ctx);
 
     }
     update() {
