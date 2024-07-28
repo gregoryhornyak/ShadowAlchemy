@@ -21,7 +21,7 @@ let game = new Game(constants.CANVAS_WIDTH, constants.CANVAS_HEIGHT);
 
 function gameLoop() {
     ctx.clearRect(0, 0, constants.CANVAS_WIDTH, constants.CANVAS_HEIGHT);
-    game.update();
+    game.update(ctx);
     game.draw(ctx);
     window.requestAnimationFrame(gameLoop);
 }
