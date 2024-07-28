@@ -8,6 +8,7 @@ import TileRenderer from "./tile_renderer.js";
 import InputHandler from "./input_handler.js";
 import SceneHandler from "./scene_handler.js";
 import EventHandler from "./event_handler.js";
+import Potion from "./potion.js";
 
 const GAMESTATES = {
     PAUSED: 0,
@@ -30,15 +31,17 @@ export default class Game {
         this.shop = new Shop(this);
         this.garden = new Garden(this);
         this.player = new Player(this, "Lajos");
+        this.potion = new Potion(this);
         this.selection = new Selection(this);
         this.eventHandler = new EventHandler(this);
-        new InputHandler(this.player, this);
+        this.inputHandler = new InputHandler(this.player, this);
         //var audio = new Audio("../assets/music/the-beat-of-nature.mp3");
         //audio.play();
     }
     draw(ctx) {
         this.sceneHandler.render_scene(ctx);
         this.player.draw(ctx);
+        this.potion.draw(ctx);
         this.selection.draw(ctx);
 
     }
