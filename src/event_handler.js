@@ -28,7 +28,7 @@ export default class EventHandler {
         }
         else {return 0}
     }
-    check_player_interaction() {
+    check_selection() {
         if (this.game.player.position.x == 100 && this.game.player.position.y == 200) {
             if (this.game.sceneHandler.current_scene == "shop") {
                 console.log("enable selection")
@@ -41,9 +41,24 @@ export default class EventHandler {
             }
         }
     }
+    check_player_interaction() {
+        if (this.game.player.init_interact == true) {
+            if (this.game.potion.is_obtained == false) {
+                console.log("Player grabbed potion.")
+                this.game.potion.is_obtained = true;
+                this.game.player.init_interact = false;
+            }
+            // check what the player is trying to interact with
+            // check if available
+            // interaction: 
+            // - object becomes child of player,
+            // - player inventory changes, plus its texture maybe to show item in hand
+        }
+    }
     update() {
         this.check_enter_garden();
         this.check_enter_shop();
+        this.check_selection();
         this.check_player_interaction();
     }
 }
