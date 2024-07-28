@@ -30,6 +30,7 @@ export default class Player {
         this.speed = 10;
         this.unit = 100;
         this.key_locked = false;
+        this.init_interact = false;
     }
     draw(ctx) {
         ctx.drawImage(this.texture,this.position.x,this.position.y,this.size,this.size);  
@@ -101,5 +102,8 @@ export default class Player {
         this.target_tile.y = this.position.y - this.unit;
         this.target_tile.y = this.snap_to_grid(this.target_tile.y);
         this.key_locked = true;
+    }
+    interact() {
+        this.init_interact = true;
     }
 }
