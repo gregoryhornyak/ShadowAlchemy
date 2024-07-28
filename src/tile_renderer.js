@@ -1,4 +1,4 @@
-export default class TileRender {
+export default class TileRenderer {
     constructor() {}
 
     fence_left(ctx,x,y,tile_size) {
