@@ -11,10 +11,16 @@ export default class TileRender {
         ctx.fillStyle = "#4c2512"
         ctx.fillRect(x,y, tile_size, tile_size)
         ctx.fillStyle = "#52a523"
-        ctx.fillRect(x+10,y, tile_size-10, tile_size)
+        ctx.fillRect(x,y, tile_size-10, tile_size)
         }
+    fence_top(ctx,x,y,tile_size) {
+        ctx.fillStyle = "#4c2512"
+        ctx.fillRect(x,y, tile_size, tile_size)
+        ctx.fillStyle = "#52a523"
+        ctx.fillRect(x,y+10, tile_size, tile_size)
+    }
     wall(ctx,x,y,tile_size) {
-        ctx.fillStyle = "#7f7d9c"
+        ctx.fillStyle = "#34495E"
         ctx.fillRect(x,y, tile_size, tile_size)
     }
     ground(ctx,x,y,tile_size) {
@@ -26,15 +32,19 @@ export default class TileRender {
         ctx.fillRect(x,y, tile_size, tile_size)
     }
     door(ctx,x,y,tile_size) {
-        ctx.fillStyle = "#fbf8f6"
-        ctx.fillRect(x,y, tile_size, tile_size)
+        ctx.fillStyle = "#DC7633"
+        ctx.fillRect(x,y+30, tile_size, tile_size-60)
+    }
+    door_right(ctx,x,y,tile_size) {
+        ctx.fillStyle = "#DC7633"
+        ctx.fillRect(x+30,y, tile_size-60, tile_size)
     }
     table(ctx,x,y,tile_size) {
         ctx.fillStyle = "#964B00"
         ctx.fillRect(x,y, tile_size, tile_size)
     }
     floor(ctx,x,y,tile_size) {
-        ctx.fillStyle = "#fbf8f6"
+        ctx.fillStyle = "#E5E7E9"
         ctx.fillRect(x,y, tile_size, tile_size)
     }
     /**
@@ -84,6 +94,9 @@ export default class TileRender {
                         break;
                     case "D": 
                         this.door(ctx,x,y,tile_size);
+                        break;
+                    case "DR": 
+                        this.door_right(ctx,x,y,tile_size);
                         break;
                     case "F": 
                         this.floor(ctx,x,y,tile_size);
