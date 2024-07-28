@@ -14,7 +14,10 @@ export default class CollisionHandler {
         let target_tile_y = this.game.player.target_tile.y;
         console.log(`target-x: ${target_tile_x}, target-y: ${target_tile_y}`)
         // later on "tile.is_obstacle" attribute will be used
-        if (this.scene_layout.get_tile(target_tile_x/100,target_tile_y/100) == "W") {
+        if (this.scene_layout.get_tile(target_tile_x/100,target_tile_y/100) == "W"
+        ||  this.scene_layout.get_tile(target_tile_x/100,target_tile_y/100) == "Ft"
+        ||  this.scene_layout.get_tile(target_tile_x/100,target_tile_y/100) == "Fr"
+        ||  this.scene_layout.get_tile(target_tile_x/100,target_tile_y/100) == "Fl") {
             //collision detected
             console.log("collision detected");
             this.game.player.will_collide = true;
