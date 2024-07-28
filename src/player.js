@@ -3,34 +3,34 @@ export default class Player {
         this.name = name;
         this.inventory = [];
 
-        this.size = 1;
+        this.size = 100;
         this.texture = new Image();
-        this.texture.src = "https://www.svgrepo.com/show/49407/scientist.svg";
+        this.texture.src = "https://www.svgrepo.com/show/312832/person.svg";
         //check if size is smaller than game size
         //this.texture.height
         //this.texture.width
         this.position = {
-            x: 0,
-            y: 0
+            x: 700,
+            y: 200  
         };
         // for smooth moving, using target tiles to help the animation.
         this.target_tile = {
-            x: 0,
-            y: 0
+            x: 700,
+            y: 200
         };
         this.speed = 10;
         this.unit = 100;
         this.key_locked = false;
     }
     draw(ctx) {
-        //ctx.drawImage(this.texture,this.position.x,this.position.x,300*this.size,300*this.size);  
-        ctx.fillStyle = "red";
-        ctx.beginPath();
-        ctx.arc(this.position.x+50, this.position.y+50, 50-8, 0, 2 * Math.PI);
-        ctx.fill();
+        ctx.drawImage(this.texture,this.position.x,this.position.y,this.size,this.size);  
+        //ctx.fillStyle = "red";
+        //ctx.beginPath();
+        //ctx.arc(this.position.x+50, this.position.y+50, 50-8, 0, 2 * Math.PI);
+        //ctx.fill();
     }
     update() {
-        console.log(`key: ${this.key_locked}, pos-x: ${this.position.x}, pos-y: ${this.position.y}`)
+        console.log(`pos-x: ${this.position.x}, pos-y: ${this.position.y}`)
         if (this.target_tile.x != this.position.x || this.target_tile.y != this.position.y){
             // work out universal math here
             // for x - horizontal movement
