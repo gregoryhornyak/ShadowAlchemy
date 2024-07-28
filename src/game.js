@@ -1,13 +1,12 @@
 // import all sub files
 //import constants from "./constants.js";
 import Player from "./player.js";
-import Shop from "./shop.js";
-import Garden from "./garden.js";
 import Selection from "./selection.js";
 import TileRenderer from "./tile_renderer.js";
 import InputHandler from "./input_handler.js";
 import SceneHandler from "./scene_handler.js";
 import EventHandler from "./event_handler.js";
+import CollisionHandler from "./collision_handler.js";
 import Potion from "./potion.js";
 
 const GAMESTATES = {
@@ -28,11 +27,12 @@ export default class Game {
         this.gameHeight = CANVAS_HEIGHT;
         this.sceneHandler = new SceneHandler(this,"shop");
         this.tileRenderer = new TileRenderer();
-        this.shop = new Shop(this);
-        this.garden = new Garden(this);
+        //this.shop = new Shop(this);
+        //this.garden = new Garden(this);
         this.player = new Player(this, "Lajos");
         this.potion = new Potion(this);
         this.selection = new Selection(this);
+        this.collisionHandler = new CollisionHandler(this);
         this.eventHandler = new EventHandler(this);
         this.inputHandler = new InputHandler(this.player, this);
         //var audio = new Audio("../assets/music/the-beat-of-nature.mp3");
@@ -46,7 +46,8 @@ export default class Game {
 
     }
     update() {
-        this.player.update();
+        this.collisionHandler.update();
         this.eventHandler.update();
+        this.player.update();
     }
 }
