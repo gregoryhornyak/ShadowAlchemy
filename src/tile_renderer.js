@@ -3,26 +3,29 @@ export default class TileRenderer {
 
     fence_left(ctx,x,y,tile_size) {
         const block = true;
-        ctx.fillStyle = "#4c2512"
+        ctx.fillStyle = "#52a523" // green
         ctx.fillRect(x,y, tile_size, tile_size)
-        ctx.fillStyle = "#52a523"
-        ctx.fillRect(x+10,y, tile_size-10, tile_size)
+        ctx.fillStyle = "#660000" // brown
+        ctx.fillRect(x+40,y, tile_size-80, tile_size)
+        ctx.fillRect(x+30,y+(tile_size/2), tile_size-60, tile_size/3)
     }
     fence_right(ctx,x,y,tile_size) {
         const block = true;
-        ctx.fillStyle = "#4c2512"
+        ctx.fillStyle = "#52a523" // green
         ctx.fillRect(x,y, tile_size, tile_size)
-        ctx.fillStyle = "#52a523"
-        ctx.fillRect(x,y, tile_size-10, tile_size)
+        ctx.fillStyle = "#660000" // brown
+        ctx.fillRect(x+40,y, tile_size-80, tile_size)
+        ctx.fillRect(x+30,y+(tile_size/2), tile_size-60, tile_size/3)
     }
     fence_top_left(ctx,x,y,tile_size) 
     {}
     fence_top(ctx,x,y,tile_size) {
         const block = true;
-        ctx.fillStyle = "#4c2512"
+        ctx.fillStyle = "#52a523" // green
         ctx.fillRect(x,y, tile_size, tile_size)
-        ctx.fillStyle = "#52a523"
-        ctx.fillRect(x,y+10, tile_size, tile_size)
+        ctx.fillStyle = "#660000" // brown
+        ctx.fillRect(x,y+40, tile_size, tile_size-80)
+        ctx.fillRect(x+(tile_size/2),y+30, tile_size/3, tile_size-60)
     }
     wall(ctx,x,y,tile_size) {
         const block = true;
