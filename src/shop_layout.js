@@ -1,17 +1,35 @@
-export default class ShopLayout {
-    constructor() {
-        // [B]locked, [S]helf, [W]all, [A]vailable, [G]ate, [D]esk 
+export default class ShopLayout 
+{
+    constructor() 
+    {
+        /* 
+            [W] - Wall, 
+            [Fl] - Fence - left,
+            [Flt] - Fence - left - top (corner),
+            [Ft] - Fence - top
+            [Frt] - Fence - right - top (corner),
+            [Fr] - Fence - right, 
+            [G] - Ground, 
+            [D] - Door, 
+            [P] - Path   
+            [T] - table,
+            [P] - Path
+        */
+        this.columns = 10;
+        this.rows = 7;
+        this.square_size = 100;
         this.layout = [
-            "W","W","W","W","W","W","W","W","W","W",
-            "W","W","W","S","S","A","G","A","A","W",
-            "W","S","A","A","A","A","W","A","S","W",
-            "W","D","D","D","D","D","W","A","S","W",
-            "W","A","A","A","A","A","W","A","S","W",
-            "W","A","A","A","A","A","W","W","W","W"
+            "W","W","W","W","W","W","W","W","D","W",
+            "W","F","F","F","F","F","F","F","F","W",
+            "W","F","F","F","F","W","F","F","F","W",
+            "W","F","F","F","F","W","F","F","F","W",
+            "W","T","T","T","T","W","F","F","F","W",
+            "W","F","F","F","F","W","F","F","F","W",
+            "W","D","W","W","D","W","W","W","W","W"
         ];
-
     }
-    get_tile(x,y) {
+    get_tile(x,y) 
+    {
         return this.layout[10*y+x]
     }
 }
