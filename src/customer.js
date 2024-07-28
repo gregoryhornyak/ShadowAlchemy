@@ -1,30 +1,25 @@
 export default class Customer {
-    constructor(game,name,customer_class,need,texture) {
+    constructor(game,name,customer_class,need) {
+        this.game = game;
         this.name = name;
         this.customer_class = customer_class;
         this.need = need;
-        this.inventory = [];
+        this.inventory;
         this.is_satisfied = false;
-
-        this.size = 10;
+        this.size = 100;
         this.texture = new Image();
-        this.texture.src = texture;
-        //check if size is smaller than game size
-        //this.texture.height
-        //this.texture.width
+        this.texture.src = "https://www.svgrepo.com/show/444845/person-girl.svg";
         this.position = {
-            x: 0,
-            y: 0
+            x: 200,
+            y: 500
         };
     }
     draw(ctx) {
-        ctx.drawImage(this.texture,this.position.x,this.position.x,300,300);  
+        ctx.drawImage(this.texture,this.position.x,this.position.y,this.size,this.size);
     }
-    update(deltaTime) {
-        this.position.x += this.speed;
-        if (this.position.x < 0) this.position.x = 0;
-        if (this.position.x + this.width > this.gameWidth) {
-            this.position.x = this.gameWidth - this.width;
+    update() {
+        if (this.need == this.inventory) {
+            this.is_satisfied = true;
         }
     }
 }
