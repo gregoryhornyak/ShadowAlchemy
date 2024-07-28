@@ -4,13 +4,13 @@ export default class Garden
 {
     constructor(game)
     {
-        this.garden_layout = new GardenLayout();
+        this.name = "garden";
+        this.layout = new GardenLayout();
         this.game = game;
     }
 
     draw(ctx) 
     {
-        let layout = new GardenLayout();
-        this.game.tileRenderer.draw(ctx, layout);
+        this.game.tileRenderer.draw(ctx, this.layout);
     }
 }
