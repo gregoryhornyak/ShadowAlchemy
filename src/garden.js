@@ -11,6 +11,6 @@ export default class Garden
     draw(ctx) 
     {
         let layout = new GardenLayout();
-        this.game.tileRender.draw(ctx, layout);
+        this.game.tileRenderer.draw(ctx, layout);
     }
 }
