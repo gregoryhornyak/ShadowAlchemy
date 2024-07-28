@@ -15,9 +15,8 @@ export default class TileRenderer {
         ctx.fillStyle = "#52a523"
         ctx.fillRect(x,y, tile_size-10, tile_size)
     }
-    fence_top_left(ctx,x,y,tile_size) {
-        
-    }
+    fence_top_left(ctx,x,y,tile_size) 
+    {}
     fence_top(ctx,x,y,tile_size) {
         const block = true;
         ctx.fillStyle = "#4c2512"
@@ -64,7 +63,10 @@ export default class TileRenderer {
     floor(ctx,x,y,tile_size) {
         const block = false;
         ctx.fillStyle = "#E5E7E9"
+        let floor_texture = new Image();
+        floor_texture.src = "https://www.svgrepo.com/show/299951/tatami-floor.svg";
         ctx.fillRect(x,y, tile_size, tile_size)
+        //ctx.drawImage(floor_texture,x,y,tile_size,tile_size);
     }
     shelf(ctx,x,y,tile_size) {
         const block = true;

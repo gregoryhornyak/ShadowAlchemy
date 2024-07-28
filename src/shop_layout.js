@@ -30,6 +30,7 @@ export default class ShopLayout
     }
     get_tile(x,y) 
     {
-        return this.layout[10*y+x]
+        // get the tile which matches with the coordinates
+        return this.layout[10*y+x];
     }
 }

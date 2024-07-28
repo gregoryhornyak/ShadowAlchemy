@@ -41,7 +41,7 @@ export default class Player {
         //ctx.fill();
     }
     update() {
-        console.log(`pos-x: ${this.position.x}, pos-y: ${this.position.y}`)
+        console.log(`target-x: ${this.target_tile.x}, target-y: ${this.target_tile.y}`)
         if (this.target_tile.x != this.position.x || this.target_tile.y != this.position.y){
             // work out universal math here
             // for x - horizontal movement
