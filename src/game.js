@@ -10,6 +10,7 @@ import CollisionHandler from "./collision_handler.js";
 import Potion from "./potion.js";
 import Ingredient from "./ingredient.js";
 import Customer from "./customer.js";
+import CustomerHandler from "./customer_handler.js";
 
 const GAMESTATES = {
     PAUSED: 0,
@@ -35,6 +36,7 @@ export default class Game {
         this.ingredient = new Ingredient(this,"blood-orange","fruit");
         this.selection = new Selection(this);
         this.collisionHandler = new CollisionHandler(this);
+        this.customerHandler = new CustomerHandler(this);
         this.eventHandler = new EventHandler(this);
         this.inputHandler = new InputHandler(this.player, this);
         //var audio = new Audio("../assets/music/the-beat-of-nature.mp3");
@@ -44,6 +46,7 @@ export default class Game {
         this.sceneHandler.render_scene(ctx);
         this.player.draw(ctx);
         this.customer.draw(ctx);
+        this.customerHandler.draw(ctx);
         this.potion.draw(ctx);
         this.ingredient.draw(ctx);
         this.selection.draw(ctx);
@@ -51,6 +54,7 @@ export default class Game {
     }
     update() {
         this.collisionHandler.update();
+        this.customerHandler.update();
         this.eventHandler.update();
         this.player.update();
         this.customer.update();
