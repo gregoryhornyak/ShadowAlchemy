@@ -1,23 +1,32 @@
 export default class Player {
     constructor(game,name) {
+        // frontend details
         this.name = name;
         this.inventory = [];
-
-        this.size = 100;
         this.texture = new Image();
         this.texture.src = "https://www.svgrepo.com/show/312832/person.svg";
-        //check if size is smaller than game size
-        //this.texture.height
-        //this.texture.width
+        this.size = 100;
+        // backend details
         this.position = {
             x: 700,
             y: 200  
         };
-        // for smooth moving, using target tiles to help the animation.
+        // for moving, using target tiles to help the animation.
+        // source tile defines the starting point
+        this.source_tile = {
+            x: 700,
+            y: 200
+        };
+        // target tile defines the ending point
+        // of the animation
         this.target_tile = {
             x: 700,
             y: 200
         };
+        // by using source and target tiles, animation could be smoothed out 
+        // with curves: calculate distance between source and target,
+        // and depending on the distance, change the speed of the player
+        // simplest curve: bell curve.
         this.speed = 10;
         this.unit = 100;
         this.key_locked = false;
