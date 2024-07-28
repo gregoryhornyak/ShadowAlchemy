@@ -7,10 +7,10 @@ export default class EventHandler {
             if (this.game.sceneHandler.current_scene != "garden") {
                 console.log("enter garden");
                 this.game.sceneHandler.change_scene("garden");
-                this.game.player.position.x = 0;
-                this.game.player.position.y = 0;
-                this.game.player.target_tile.x = 0;
-                this.game.player.target_tile.y = 0;
+                this.game.player.position.x = 100;
+                this.game.player.position.y = 500;
+                this.game.player.target_tile.x = 100;
+                this.game.player.target_tile.y = 500;
             }
         }
         else {return 0}
@@ -20,10 +20,10 @@ export default class EventHandler {
             if (this.game.sceneHandler.current_scene != "shop") {
                 console.log("enter shop");
                 this.game.sceneHandler.change_scene("shop");
-                this.game.player.position.x = 0;
-                this.game.player.position.y = 0;
-                this.game.player.target_tile.x = 0;
-                this.game.player.target_tile.y = 0;
+                this.game.player.position.x = 800;
+                this.game.player.position.y = 100;
+                this.game.player.target_tile.x = 800;
+                this.game.player.target_tile.y = 100;
             }
         }
         else {return 0}
