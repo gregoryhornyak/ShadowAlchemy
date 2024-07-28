@@ -8,6 +8,8 @@ import SceneHandler from "./scene_handler.js";
 import EventHandler from "./event_handler.js";
 import CollisionHandler from "./collision_handler.js";
 import Potion from "./potion.js";
+import Ingredient from "./ingredient.js";
+import Customer from "./customer.js";
 
 const GAMESTATES = {
     PAUSED: 0,
@@ -27,10 +29,10 @@ export default class Game {
         this.gameHeight = CANVAS_HEIGHT;
         this.sceneHandler = new SceneHandler(this,"shop");
         this.tileRenderer = new TileRenderer();
-        //this.shop = new Shop(this);
-        //this.garden = new Garden(this);
+        this.customer = new Customer(this,"Sára","Vampire","blood-orange");
         this.player = new Player(this, "Lajos");
-        this.potion = new Potion(this);
+        this.potion = new Potion(this,"health-regen","red");
+        this.ingredient = new Ingredient(this,"blood-orange","fruit");
         this.selection = new Selection(this);
         this.collisionHandler = new CollisionHandler(this);
         this.eventHandler = new EventHandler(this);
@@ -41,7 +43,9 @@ export default class Game {
     draw(ctx) {
         this.sceneHandler.render_scene(ctx);
         this.player.draw(ctx);
+        this.customer.draw(ctx);
         this.potion.draw(ctx);
+        this.ingredient.draw(ctx);
         this.selection.draw(ctx);
 
     }
@@ -49,5 +53,6 @@ export default class Game {
         this.collisionHandler.update();
         this.eventHandler.update();
         this.player.update();
+        this.customer.update();
     }
 }
