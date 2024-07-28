@@ -3,12 +3,10 @@
 import Player from "./player.js";
 import Shop from "./shop.js";
 import Garden from "./garden.js";
-import TileRender from "./tile_render.js";
-import ShopLayout from "./shop_layout.js";
-import GardenLayout from "./garden_layout.js";
-//import Customer from "/src/customer";
-import InputHandler from "./input_handle.js";
-import Potion from "./potions.js";
+import TileRenderer from "./tile_renderer.js";
+import InputHandler from "./input_handler.js";
+import SceneHandler from "./scene_handler.js";
+import EventHandler from "./event_handler.js";
 
 const GAMESTATES = {
     PAUSED: 0,
@@ -26,23 +24,27 @@ export default class Game {
     constructor(CANVAS_WIDTH, CANVAS_HEIGHT) {
         this.gameWidth = CANVAS_WIDTH;
         this.gameHeight = CANVAS_HEIGHT;
-        this.tileRender = new TileRender();
+        this.sceneHandler = new SceneHandler(this,"shop");
+        this.tileRenderer = new TileRenderer();
         this.shop = new Shop(this);
-        this.shop_layout = new ShopLayout();
+        
         this.garden = new Garden(this);
-        this.garden_layout = new GardenLayout();
+        
         this.player = new Player(this, "Lajos");
+        this.eventHandler = new EventHandler(this);
         new InputHandler(this.player, this);
         //var audio = new Audio("../assets/music/the-beat-of-nature.mp3");
         //audio.play();
     }
     draw(ctx) {
-        this.shop.draw(ctx);
+        // this.shop.draw(ctx);
         //this.garden.draw(ctx);
+        this.sceneHandler.render_scene(ctx);
         this.player.draw(ctx);
-        this.health_potion.draw(ctx);
+
     }
     update() {
         this.player.update();
+        this.eventHandler.update();
     }
 }
