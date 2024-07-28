@@ -20,7 +20,9 @@ https://jummb.us/#j6N07Unnamedn420s0k0l00e04t1Ua7g0fj07r1O_U000000000000i0o3321T
 keyboard?
 
 MVP:
-- perspective could be top down to make things easier,
+- perspective: top down,
+- scenes: garden, shop
+- tile types: floor, wall, door, soil, fence, desk, path
 1-2 types of customers: Assassin, Vampires
 - Haytham K. - Assassin: looking for invisibility potion, pickpocket ability boost
 - Vladislav - Vampire: looking for blood-orange
