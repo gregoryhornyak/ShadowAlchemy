@@ -27,6 +27,9 @@ export default class InputHandler {
             if (event.key == "ArrowUp") {
                 player.move_down()
             }
+            if (event.key == "e") {
+                player.interact()
+            }
             if (event.repeat) {
                 console.log("repeated")
             }
