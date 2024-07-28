@@ -38,5 +38,16 @@ QUESTIONS:
 
 keyboard?
 
-PROBLEM:
+PROBLEMS:
+
+1/
 grid system using two different systems: coordinates and tile numbers
+
+2/
+move a box around the screen with the keyboard using “keydown” but i’ve noticed that there’s a delay.
+Move -> Stop -> Moves Smoothly
+
+2/b
+The fix is to have the event handler set a variable to "true" and then use a "setInterval" or "setTimeout" to move the box at a given rate. Each loop through the movement code should first check if the variable is still true. And for when you want it to stop moving you need a keyup event to set that variable to "false".
+Note: if you use "setInterval" you must use "clearInterval" to stop it from looping. Even with it checking for "false" the function will still run even if the box is not moving. This could impact performance if you have a lot of other javascript your running.
+"setInterval" and "setTimeout" have some useful, and possibly detrimental, differences. So if you haven't used them make sure you read up on them.
