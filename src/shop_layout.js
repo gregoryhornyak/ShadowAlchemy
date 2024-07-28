@@ -21,7 +21,7 @@ export default class ShopLayout
         this.layout = [
             "W","W","W","W","W","W","W","W","D","W",
             "W","S","S","F","F","F","F","F","F","W",
-            "W","F","F","F","F","W","F","F","F","W",
+            "W","F","F","F","F","F","F","F","F","W",
             "W","F","F","F","F","W","F","F","F","DR",
             "W","T","T","T","T","W","F","F","F","W",
             "W","F","F","F","F","W","F","F","F","W",
