@@ -10,7 +10,7 @@ export default class ShopLayout
             [Frt] - Fence - right - top (corner),
             [Fr] - Fence - right, 
             [G] - Ground, 
-            [D] - Door, 
+            [D] - Door, DR - Door right
             [P] - Path   
             [T] - table,
             [P] - Path
@@ -22,7 +22,7 @@ export default class ShopLayout
             "W","W","W","W","W","W","W","W","D","W",
             "W","F","F","F","F","F","F","F","F","W",
             "W","F","F","F","F","W","F","F","F","W",
-            "W","F","F","F","F","W","F","F","F","W",
+            "W","F","F","F","F","W","F","F","F","DR",
             "W","T","T","T","T","W","F","F","F","W",
             "W","F","F","F","F","W","F","F","F","W",
             "W","D","W","W","D","W","W","W","W","W"
