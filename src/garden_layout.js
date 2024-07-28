@@ -19,7 +19,7 @@ export default class GardenLayout
         this.rows = 7;
         this.square_size = 100;
         this.layout = [
-            "Flt","Ft","Ft","Ft","Ft","Ft","Ft","Ft","Ft","Frt",
+            "Ftl","Ft","Ft","Ft","Ft","Ft","Ft","Ft","Ft","Frt",
             "Fl" ,"P" ,"G" ,"G" ,"G" ,"G" ,"G" ,"G" ,"G" ,"Fr" ,
             "Fl" ,"P" ,"G" ,"G" ,"G" ,"G" ,"G" ,"G" ,"G" ,"Fr" ,
             "Fl" ,"P" ,"G" ,"G" ,"G" ,"G" ,"G" ,"G" ,"G" ,"Fr" ,
